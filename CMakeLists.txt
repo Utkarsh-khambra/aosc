@@ -23,7 +23,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # see https://github.com/TheLartians/CPM.cmake for more info
 
 find_package(fmt REQUIRED)
-find_package(Catch2 REQUIRED)
 # ---- Add source files ----
 
 # Note: globbing sources is considered bad practice as CMake's generators may not detect new files
@@ -31,19 +30,20 @@ find_package(Catch2 REQUIRED)
 
 # ---- Create library ----
 # add_executable(aoc src/impls/tests.cpp src/impls/catch_main.cpp)
-add_executable(aoc src/main.cpp)
+file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+add_executable(aoc ${SRC_FILES})
 # Note: for header-only libraries change all PUBLIC flags to INTERFACE and create an interface
 # target: add_library(aoc INTERFACE) set_target_properties(aoc PROPERTIES
 # INTERFACE_COMPILE_FEATURES cxx_std_17)
 
 target_compile_features(aoc PUBLIC cxx_std_20)
-target_compile_options(aoc PRIVATE -ggdb  -fsanitize=address -fsanitize=undefined -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused )
+target_compile_options(aoc PRIVATE -ggdb -fsanitize=address -fsanitize=undefined -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused )
 
 target_include_directories(
 	aoc PUBLIC $<BUILD_INTERFACE: ${fmt_INCLUDE_DIRS}  ${Catch2_INCLUDE_DIRS} >
 )
 
-target_link_libraries(aoc PRIVATE -lasan -lubsan fmt::fmt Catch2::Catch2 )
+target_link_libraries(aoc PRIVATE -lasan -lubsan fmt::fmt)
 
 # ---- Create an installable target ----
 # this allows users to install and find the library via `find_package()`.
