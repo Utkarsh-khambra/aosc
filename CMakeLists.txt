@@ -36,8 +36,8 @@ add_executable(aoc ${SRC_FILES})
 # target: add_library(aoc INTERFACE) set_target_properties(aoc PROPERTIES
 # INTERFACE_COMPILE_FEATURES cxx_std_17)
 
-target_compile_features(aoc PUBLIC cxx_std_20)
-target_compile_options(aoc PRIVATE -ggdb -fsanitize=address -fsanitize=undefined -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-declarations -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused )
+# target_compile_features(aoc PUBLIC cxx_std_20)
+target_compile_options(aoc PRIVATE -ggdb -std=gnu++2b -fsanitize=address -fsanitize=undefined -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused )
 
 target_include_directories(
 	aoc PUBLIC $<BUILD_INTERFACE: ${fmt_INCLUDE_DIRS}  ${Catch2_INCLUDE_DIRS} >
