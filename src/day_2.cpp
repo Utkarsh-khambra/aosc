@@ -109,7 +109,8 @@ int score(Move move, Result result) noexcept {
 }
 
 void day2() noexcept {
-  std::ifstream file("day2_input.txt");
+  std::string home(std::getenv("HOME"));
+  std::ifstream file(home + "/aoc/src/data/day2_input.txt");
   if (!file.is_open()) {
     fmt::print("Couldn't open input file\n");
     abort();

@@ -24,7 +24,8 @@ auto parse_file(std::string_view filename) {
 }
 
 void day1() noexcept {
-  auto calories = parse_file("day1_input.txt");
+  std::string home(std::getenv("HOME"));
+  auto calories = parse_file(home + "/aoc/src/data/day1_input.txt");
   fmt::print("Max is {}\n", calories.top());
   auto const top_three_sum = [&] {
     auto sum = calories.top();

@@ -55,7 +55,8 @@ public:
 
 void day3() noexcept {
   std::string line;
-  std::ifstream file("day3_input.txt");
+  std::string home(std::getenv("HOME"));
+  std::ifstream file(home + "/aoc/src/data/day3_input.txt");
   if (!file.is_open()) {
     fmt::print("Couldn't open input file\n");
     abort();
