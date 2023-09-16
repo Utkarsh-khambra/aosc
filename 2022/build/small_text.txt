@@ -1,0 +1,17 @@
+class	ShowTabs	:	public	Pipeline	{
+public:
+		void	execute(std::string	&str)	noexcept	override	{
+				size_t	pos	=	0;
+				while	(true)	{
+						auto	result	=	str.find("\t",	pos);
+						if	(result	==	std::string::npos)
+								break;
+						str.at(result)	=	'^';
+						str.insert(result	+	1,	"I");
+						pos	=	result;
+						if	(pos	>=	str.size())
+								break;
+				}
+		};
+};
+

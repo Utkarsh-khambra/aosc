@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/utkarsh/aosc/build",
+  "command": "/usr/bin/c++ -I/home/utkarsh/aosc -isystem /home/utkarsh/.conan/data/fmt/8.0.1/_/_/package/2c09c8f84c016041549fcee94e4caae5d89424b6/include -ggdb -std=gnu++2b -fsanitize=address -fsanitize=undefined -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused -o CMakeFiles/aosc.dir/src/day1.cpp.o -c /home/utkarsh/aosc/src/day1.cpp",
+  "file": "/home/utkarsh/aosc/src/day1.cpp"
+},
+{
+  "directory": "/home/utkarsh/aosc/build",
+  "command": "/usr/bin/c++ -I/home/utkarsh/aosc -isystem /home/utkarsh/.conan/data/fmt/8.0.1/_/_/package/2c09c8f84c016041549fcee94e4caae5d89424b6/include -ggdb -std=gnu++2b -fsanitize=address -fsanitize=undefined -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wlogical-op -Wmissing-include-dirs -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=5 -Wswitch-default -Wundef -Wno-unused -o CMakeFiles/aosc.dir/src/main.cpp.o -c /home/utkarsh/aosc/src/main.cpp",
+  "file": "/home/utkarsh/aosc/src/main.cpp"
+}
+]

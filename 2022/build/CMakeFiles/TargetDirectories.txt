@@ -1,0 +1,3 @@
+/home/utkarsh/aosc/build/CMakeFiles/aosc.dir
+/home/utkarsh/aosc/build/CMakeFiles/edit_cache.dir
+/home/utkarsh/aosc/build/CMakeFiles/rebuild_cache.dir
