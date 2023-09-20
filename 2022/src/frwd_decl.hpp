@@ -1,0 +1,26 @@
+#pragma once
+void day1() noexcept;
+void day2() noexcept;
+void day3() noexcept;
+void day4() noexcept;
+void day5() noexcept;
+void day6() noexcept;
+void day7() noexcept;
+void day8() noexcept;
+void day9() noexcept;
+void day10() noexcept;
+void day11() noexcept;
+void day12() noexcept;
+void day13() noexcept;
+void day14() noexcept;
+void day15() noexcept;
+void day16() noexcept;
+void day17() noexcept;
+void day18() noexcept;
+void day19() noexcept;
+void day20() noexcept;
+void day21() noexcept;
+void day22() noexcept;
+void day23() noexcept;
+void day24() noexcept;
+void day25() noexcept;
