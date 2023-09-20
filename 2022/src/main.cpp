@@ -10,8 +10,8 @@ int main() {
   // day8();
   // day9();
   // day10();
-  day11();
-  // day12();
+  // day11();
+  day12();
   // day13();
   // day14();
   // day15();
