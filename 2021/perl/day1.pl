@@ -35,6 +35,7 @@ my @nums_3;
 foreach my $i (0 .. $#nums - 2)
 {
     my @window = @nums[$i .. $i + 2];
+
     # print join ',', @window , "\n";
     push @nums_3, sum(\@window);
 }
