@@ -13,7 +13,7 @@ using Range = std::array<std::pair<unsigned int, unsigned int>, 2>;
 
 int main()
 {
-    std::ifstream input("input/day5");
+    std::ifstream input("../input/day5");
     std::string line;
     std::vector<Range> ranges;
     auto hash = [](std::pair<uint32_t, uint32_t> const& a) -> size_t {
@@ -66,44 +66,49 @@ int main()
         if (i >= 2)
             ++count;
     }
-    std::cout << "Part 1 " << count << "\n"; 
-    for(auto [first, last] : ranges){
-        if(first.second > last.second){
-            if(first.first < last.first)
+    std::cout << "Part 1 " << count << "\n";
+    for (auto [first, last]: ranges)
+    {
+        if (first.second > last.second)
+        {
+            if (first.first < last.first)
             {
-                for(;first.second >= last.second; )
+                for (; first.second >= last.second;)
                 {
-                    ++map[{first.first++, first.second--}];
+                    ++map[{ first.first++, first.second-- }];
                 }
             }
-            else{
-                for(;first.second >= last.second; )
-                {
-                    ++map[{first.first--, first.second--}];
-                }
-            }
-        } 
-        else{
-            if(first.first < last.first)
+            else
             {
-                for(;first.second <= last.second; )
+                for (; first.second >= last.second;)
                 {
-                    ++map[{first.first++, first.second++}];
+                    ++map[{ first.first--, first.second-- }];
                 }
             }
-            else{
-                for(;first.second <= last.second; )
+        }
+        else
+        {
+            if (first.first < last.first)
+            {
+                for (; first.second <= last.second;)
                 {
-                    ++map[{first.first--, first.second++}];
+                    ++map[{ first.first++, first.second++ }];
+                }
+            }
+            else
+            {
+                for (; first.second <= last.second;)
+                {
+                    ++map[{ first.first--, first.second++ }];
                 }
             }
         }
     }
-     count = 0;
+    count = 0;
     for (auto i: map | std::views::values)
     {
         if (i >= 2)
             ++count;
     }
-    std::cout << "Part 2 " << count << "\n"; 
+    std::cout << "Part 2 " << count << "\n";
 }

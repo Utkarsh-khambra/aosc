@@ -14,7 +14,7 @@ inline int convert_to_int(R&& r)
 int main()
 {
     using std::operator""sv;
-    std::ifstream input("input/day2");
+    std::ifstream input("../input/day2");
     std::string line;
     int total_depth = 0;
     int total_forward = 0;

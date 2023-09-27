@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-open my $file_h, '<', 'input/day2' or die "Cannot open day2 file: $!";
+open my $file_h, '<', '../input/day2' or die "Cannot open day2 file: $!";
 
 my $total_forward = 0;
 my $total_depth   = 0;

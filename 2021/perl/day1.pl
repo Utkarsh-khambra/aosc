@@ -1,7 +1,8 @@
 use strict;
 use warnings;
 
-open my $input_fh, '<', "input/day1" or die "Cannot open input data file: $!";
+open my $input_fh, '<', "../input/day1"
+  or die "Cannot open input data file: $!";
 
 sub sum($)
 {

@@ -9,7 +9,7 @@
 int main()
 {
     using std::operator""sv;
-    std::ifstream input("input/day1");
+    std::ifstream input("../input/day1");
     assert(input);
 
     std::vector<int> nums(std::istream_iterator<int> { input }, std::istream_iterator<int>());

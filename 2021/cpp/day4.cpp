@@ -24,7 +24,7 @@ class BingoBoard
         if (board_values.contains(call) && !won)
         {
             auto [row, col] = board_values[call];
-            won =  set_row_element(row, col) || set_col_element(row, col);
+            won = set_row_element(row, col) || set_col_element(row, col);
             return won;
         }
         return false;
@@ -116,7 +116,7 @@ std::vector<BingoBoard> parse_bingo_boards(std::ifstream& input)
 
 int main()
 {
-    std::ifstream input("input/day4");
+    std::ifstream input("../input/day4");
     std::string line;
     std::getline(input, line);
     std::vector<int> calls;
@@ -137,7 +137,7 @@ int main()
             if (board.mark(call))
             {
                 ++total_wins;
-                if(total_wins == 1)
+                if (total_wins == 1)
                 {
                     std::cout << board.sum_unmarked() * call << "\n";
                 }

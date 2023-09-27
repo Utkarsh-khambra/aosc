@@ -1,11 +1,11 @@
+#include <cassert>
 #include <fstream>
 #include <iostream>
 #include <ranges>
 #include <vector>
-#include <cassert>
 int main()
 {
-    std::fstream input("input/day6");
+    std::fstream input("../input/day6");
     std::string line;
     std::vector<int> fish;
     while (std::getline(input, line, ','))

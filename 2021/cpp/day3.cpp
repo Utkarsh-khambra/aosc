@@ -6,13 +6,13 @@
 #include <vector>
 int main()
 {
-    std::ifstream input("input/day3");
+    std::ifstream input("../input/day3");
     std::string line;
     std::getline(input, line);
     std::vector<int> count;
     int pc = line.size();
-    std::vector<unsigned int> vals{0};
-    for (auto [i,c]: line|std::views::enumerate)
+    std::vector<unsigned int> vals { 0 };
+    for (auto [i, c]: line | std::views::enumerate)
     {
         if (c == '0')
         {
@@ -22,7 +22,7 @@ int main()
         {
             count.push_back(0);
         }
-        vals[0] |= (c-'0') << (pc-i-1);
+        vals[0] |= (c - '0') << (pc - i - 1);
     }
     while (std::getline(input, line))
     {
@@ -31,7 +31,7 @@ int main()
              line | std::views::transform([](auto a) noexcept { return a - '0'; }) | std::views::enumerate)
         {
             count[i] += bit == 0 ? 1 : -1;
-            temp |= bit << (pc-i-1);
+            temp |= bit << (pc - i - 1);
         }
         vals.push_back(temp);
     }
@@ -50,7 +50,7 @@ int main()
     std::vector<unsigned int> copys2(vals);
     auto* ref = &vals;
     auto* ref2 = &copys;
-    for (auto i: std::views::iota(0, pc)|std::views::reverse )
+    for (auto i: std::views::iota(0, pc) | std::views::reverse)
     {
         unsigned int mask = 1U << i;
         int rel_count = 0;
@@ -69,7 +69,7 @@ int main()
             }
             if (ref2->size() == 1)
             {
-                std::cout << ref2->front()<<'\n';
+                std::cout << ref2->front() << '\n';
                 break;
             }
         }
@@ -100,7 +100,7 @@ int main()
             }
             if (ref2->size() == 1)
             {
-                std::cout << ref2->front()<<'\n';
+                std::cout << ref2->front() << '\n';
                 break;
             }
         }
