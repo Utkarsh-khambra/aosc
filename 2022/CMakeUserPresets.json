@@ -1,0 +1,9 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "/home/utkarsh/Dropbox/aosc/2022/build/CMakePresets.json"
+    ]
+}

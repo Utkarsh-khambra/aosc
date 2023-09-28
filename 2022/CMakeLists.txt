@@ -10,7 +10,6 @@ project(
 
 # ---- Include guards ----
 
-include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
   message(
     FATAL_ERROR
@@ -30,7 +29,7 @@ find_package(fmt REQUIRED)
 
 # ---- Create library ----
 # add_executable(aoc src/impls/tests.cpp src/impls/catch_main.cpp)
-file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/cpp/*.cpp)
 add_executable(aoc ${SRC_FILES})
 # Note: for header-only libraries change all PUBLIC flags to INTERFACE and create an interface
 # target: add_library(aoc INTERFACE) set_target_properties(aoc PROPERTIES
